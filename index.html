@@ -54,10 +54,11 @@
 		      if (tokenizeErr) {
 			console.log(tokenizeErr);
                         if (tokenizeErr.code === 'PAYMENT_REQUEST_CANCELED') {
-                            alert('Hi1');
+                            alert(tokenizeErr.code);
                             // Pay with Google payment request was canceled by user
                         } else {
-                            alert('Hi');
+                            alert(tokenizeErr);
+			    console.log(tokenizeErr.code);
                             // an error occurred while processing
                         }
 		      }
