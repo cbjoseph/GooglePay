@@ -81,6 +81,7 @@
         authorization: 'sandbox_8fqm2nrp_p5626wqxg94h7ynh'
     }, function (clientErr, clientInstance) {
         if (braintree.googlePayment.isSupported()) {
+	console.log("not supported");
             braintree.googlePayment.create({
                 client: clientInstance
             }, function (googlePaymentErr, googlePaymentInstance) {
