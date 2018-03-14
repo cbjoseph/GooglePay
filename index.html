@@ -80,8 +80,11 @@
     braintree.client.create({
         authorization: 'sandbox_8fqm2nrp_p5626wqxg94h7ynh'
     }, function (clientErr, clientInstance) {
+	if (clientErr) {
+	console.log(clientErr);
+       } 
         if (braintree.googlePayment.isSupported()) {
-	console.log("not supported");
+	console.log("it is not supported");
             braintree.googlePayment.create({
                 client: clientInstance
             }, function (googlePaymentErr, googlePaymentInstance) {
@@ -106,7 +109,9 @@
                     });
                 });
             });
-        }
+        } else {
+	console.log("not supported");
+}
 
         // Set up other components
     });
